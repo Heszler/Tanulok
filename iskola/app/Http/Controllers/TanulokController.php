@@ -54,6 +54,8 @@ class TanulokController extends Controller
     public function edit(string $id)
     {
         //
+        $adatok=TanulokModel::find($id);
+        return view('edit')->with('adatok',$adatok);
     }
 
     /**
@@ -62,6 +64,7 @@ class TanulokController extends Controller
     public function update(Request $request, string $id)
     {
         //
+
     }
 
     /**
