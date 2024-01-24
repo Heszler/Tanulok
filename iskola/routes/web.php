@@ -24,3 +24,5 @@ Route::get('/tanulok',[TanulokController::class, 'index']);
 Route::get('/tanulok/create',[TanulokController::class,'create']);
 //Tárolás
 Route::post('/tanulok',[TanulokController::class,'store']);
+//Bizonyos adat megjelenítése
+Route::get('/tanulok/{id}',[TanulokController::class,'show']);
