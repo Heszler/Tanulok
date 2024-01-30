@@ -28,3 +28,6 @@ Route::post('/tanulok',[TanulokController::class,'store']);
 Route::get('/tanulok/{id}',[TanulokController::class,'show']);
 //Szerkesztés
 Route::get('/tanulok/{id}/edit',[TanulokController::class,'edit']);
+Route::patch('/tanulok/{id}/',[TanulokController::class,'update']);
+//Törlés
+Route::delete('/tanulok/{id}',[TanulokController::class,'destroy']);

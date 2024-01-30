@@ -8,8 +8,9 @@
 </head>
 <body>
     <h1>Adat szerkesztése</h1>
-    <form action="{{ url('tanulok') }}" method="POST">
+    <form action="{{ url('tanulok/'.$adatok->id) }}" method="POST">
         {!! csrf_field() !!}
+        @method("PATCH")
         
         <label for="omaz">OM azonosító:</label>
         <input type="number" id="omaz" name="omaz" value="{{ $adatok->omaz }}"><br>

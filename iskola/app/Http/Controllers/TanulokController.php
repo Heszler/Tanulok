@@ -62,9 +62,11 @@ class TanulokController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
-        //
-
+    {        
+        $adatok=TanulokModel::find($id);
+        $input=$request->all();
+        $adatok->update($input);
+        return redirect('/tanulok');
     }
 
     /**
@@ -72,6 +74,7 @@ class TanulokController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        TanulokModel::destroy($id);
+        return redirect('/tanulok');
     }
 }

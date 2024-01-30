@@ -7,12 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>azkom</h1>
+    <h1>Iskolai téma</h1>
+    <h2> <a href={{ url('/tanulok/create') }}>Új tanuló felvitele </a> </h2>
     <ul>
     @foreach($adatok as $egyadat)
     <li>
     {{ $egyadat->omaz}}
     {{ $egyadat->nev}}
+    <a href={{ url('/tanulok/'.$egyadat->id) }}> Részletek </a>
+    <a href={{ url('/tanulok/'.$egyadat->id.'/edit') }}> Szerkesztés </a>
+    <form method="POST" action="{{ url('tanulok/'.$egyadat->id) }}">
+        {{ method_field('DELETE') }}
+        {{ csrf_field() }}
+        <button type="submit"> Törlés </button>
+    </form>
     </li>
 
     @endforeach
